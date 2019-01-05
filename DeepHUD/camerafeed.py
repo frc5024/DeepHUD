@@ -1,6 +1,9 @@
 import cv2
 
-cam = cv2.VideoCapture(0)
+try:
+	cam = cv2.VideoCapture(1)
+except:
+	cam = cv2.VideoCapture(0)
 
 def getFrame():
 	global cam

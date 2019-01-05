@@ -8,3 +8,4 @@ The DeepHUD data is published in the `/SmartDashboard/DeepHUD` table
 | -- | -- |
 | match_time | The time reported from FMS |
 | speed | Speed that is passed into ArcadeDrive |
+| mode | 0 = auto, 1 = teleop |

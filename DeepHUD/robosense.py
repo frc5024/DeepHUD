@@ -9,8 +9,6 @@ top_mid    = interp1d([0,1], [speed_bar_mid, speed_bar_top])
 bottom_mid = interp1d([-1,0], [speed_bar_bottom, speed_bar_mid])
 
 def buildOverlay(frame, sensors):
-	
-	
 	# Draw speed background
 	cv2.rectangle(frame,(10,10),(20,430),(0,255,0),3)
 	
