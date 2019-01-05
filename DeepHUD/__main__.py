@@ -3,12 +3,15 @@ import robotdata as sensors
 import robosense as rs
 import cv2
 
+sensors.useFake("172.16.10.113")
+
 # Program loop
 while True:
 	# get frame
 	cam_frame = camera.getFrame()
 	# get sensor data
 	sensor_data = sensors.getData()
+	print(sensor_data["mode"])
 	# process frame
 	
 	# build overlay

@@ -9,6 +9,11 @@ def reloadTable():
 	NetworkTables.initialize(server='roborio-5024-frc.local')
 	table = NetworkTables.getTable('SmartDashboard/DeepHUD')
 
+def useFake(ip):
+	global table
+	NetworkTables.initialize(server=ip)
+	table = NetworkTables.getTable('SmartDashboard/DeepHUD')
+
 def getData():
 	global table
 	# dummy data

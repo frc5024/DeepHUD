@@ -7,5 +7,5 @@ mode = 0
 
 while True:
 	input()
-	mode = int(not bool(mode))
+	mode = 0 if mode == 1 else 1
 	
