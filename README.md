@@ -1,6 +1,8 @@
 # DeepHUD
 A HUD for DeepSpace auto
 
+**DeepHUD development is currently on hold due to technical problems**
+
 # DeepHUD table
 The DeepHUD data is published in the `/SmartDashboard/DeepHUD` table
 
