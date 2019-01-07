@@ -9,6 +9,9 @@ sensors.useFake("172.16.10.113")
 while True:
 	# get frame
 	cam_frame = camera.getFrame()
+	
+	if type(cam_frame) == type(0) and cam_frame == 0:
+		continue
 	# get sensor data
 	sensor_data = sensors.getData()
 	print(sensor_data["mode"])
