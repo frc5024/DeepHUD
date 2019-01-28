@@ -1,0 +1,52 @@
+<head>
+	<title>DeepHUD</title>
+	
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./bulma.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	
+	<nav class="navbar">
+		<div class="container">
+			
+			<!--Branding-->
+		  <div class="navbar-brand">
+		    <a class="navbar-item">
+		      <h1 class="is-1"><strong>Raider</strong>Robotics <strong>|</strong> DeepHUD</h1>
+		    </a>
+		  </div>
+		  
+		  <!--Live 12h formatted time for the drivers-->
+		  <a class="navbar-item">
+				<h1 class="is-1" >Current time: <strong id="time">00:00</strong></h1>
+			</a>
+			
+			<!--Programmable message to display to the drivers-->
+			<a class="navbar-item">
+				<h1 class="is-1" id="motd"></h1>
+			</a>
+			
+		</div>
+	</nav>
+	
+	<div class="container has-text-centered">
+		<div class="columns">
+			
+			<!--Camera 1-->
+			<div class="column" id="camera">
+				<img src="http://10.50.24.2:1181/stream.mjpg" width="100%">
+			</div>
+			
+			<!--Camera 2-->
+			<div class="column" id="camera">
+				<img src="http://10.50.24.2:1182/stream.mjpg" width="100%">
+			</div>
+			
+		</div>
+	</div>
+	
+	<!--JS file for time and MOTD-->
+	<script src="./main.js"></script>
+</body>
