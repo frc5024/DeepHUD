@@ -35,13 +35,13 @@
 		<div class="columns">
 			
 			<!--Camera 1-->
-			<div class="column" id="camera">
-				<img src="http://10.50.24.2:1181/stream.mjpg" width="100%">
+			<div class="column" id="camera" >
+				<img id="vision" src="http://10.50.24.2:1182/stream.mjpg">
 			</div>
 			
 			<!--Camera 2-->
 			<div class="column" id="camera">
-				<img src="http://10.50.24.2:1182/stream.mjpg" width="100%">
+				<img id="driver" width="100%" src="http://10.50.24.2:1181/stream.mjpg">
 			</div>
 			
 		</div>
@@ -49,7 +49,8 @@
 	
 	<!--JS file for time and MOTD-->
 	<script src="./time.js"></script>
-    <script>
-    startTime()
-    </script>
+	<script src="./images.js"></script>
+  <script>
+  	startTime()
+  </script>
 </body>
