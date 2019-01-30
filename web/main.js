@@ -1,32 +1,49 @@
-function checkTime(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
+const { app, BrowserWindow } = require('electron')
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let win
+
+function createWindow () {
+  // Create the browser window.
+  win = new BrowserWindow({ width: 800, height: 600 })
+
+  // and load the index.html of the app.
+  win.loadFile('index.html')
+
+  // Open the DevTools.
+  win.webContents.openDevTools()
+
+  // Emitted when the window is closed.
+  win.on('closed', () => {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    win = null
+  })
 }
 
-function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  // add a zero in front of numbers<10
-  m = checkTime(m);
-  s = checkTime(s);
-  
-  // convert to 12h time
-  if(h > 12){
-  	h -= 12;
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', createWindow)
+
+// Quit when all windows are closed.
+app.on('window-all-closed', () => {
+  // On macOS it is common for applications and their menu bar
+  // to stay active until the user quits explicitly with Cmd + Q
+  if (process.platform !== 'darwin') {
+    app.quit()
   }
-  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-  t = setTimeout(function() {
-    startTime()
-  }, 500);
-}
+})
 
-// show the motd
-// change this to display a message or reminder for the drivers
-document.getElementById('motd').innerHTML = "Beta 1";
+app.on('activate', () => {
+  // On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (win === null) {
+    createWindow()
+  }
+})
 
-// start the timer
-startTime();
+// In this file you can include the rest of your app's specific main process
+// code. You can also put them in separate files and require them here.
