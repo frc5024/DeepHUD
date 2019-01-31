@@ -23,9 +23,14 @@
 				<h1 class="is-1" >Current time: <strong id="time">00:00</strong></h1>
 			</a>
 			
-			<!--Programmable message to display to the drivers-->
+			<!--Refresh button-->
 			<a class="navbar-item" onclick="location.reload()">
 				<h1 class="is-1" >Refresh Feeds</h1>
+			</a>
+			
+			<!--Status-->
+			<a class="navbar-item">
+				<h1 class="is-1" id="status"><stat id="robot-status">Robot: <dc>Disconnected</dc></stat> | <stat id="rpi-status">RPi: <dc>Disconnected</dc></stat></h1>
 			</a>
 			
 		</div>
@@ -36,7 +41,7 @@
 			
 			<!--Camera 1-->
 			<div class="column" id="camera">
-				<img id="driver" src="http://10.50.24.2:1181/stream.mjpg" width="100%" onerror="this.onerror=null;this.src = this.src">
+				<img id="driver" src="http://10.50.24.2:1181/stream.mjpg" width="100%">
 			</div>
 			
 			<!--Camera 2-->
@@ -49,9 +54,12 @@
 	
 	<!--JS file for time and MOTD-->
 	<script src="./time.js"></script>
+	<script src="status.js"></script>
 	<!--<script src="./images.js"></script>-->
   <script>
   	startTime();
   	// window.setInterval(function(){updateImages()}, 5);
+  	window.setInterval(function(){checkStatus()}, 5000);
+  	window.setInterval(function(){wake()}, 500);
   </script>
 </body>

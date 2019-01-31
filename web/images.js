@@ -37,21 +37,21 @@
 // 	visionCanvas.height = height;
 // }
 
-function visionError(){
-	visionImg.src="./invalid.png";
-	console.log("Failed to load vision camera");
-}
+// function visionError(){
+// 	visionImg.src="./invalid.png";
+// 	console.log("Failed to load vision camera");
+// }
 
-function driverError(){
-	driverImg.src="./invalid.png";
-	console.log("Failed to load driver camera");
-}
+// function driverError(){
+// 	driverImg.src="./invalid.png";
+// 	console.log("Failed to load driver camera");
+// }
 
-var driverImg = document.getElementById("driver");
-var visionImg = document.getElementById("vision");
+// var driverImg = document.getElementById("driver");
+// var visionImg = document.getElementById("vision");
 
-driverImg.onerror = driverError;
-visionImg.onerror = visionError;
+// driverImg.onerror = driverError;
+// visionImg.onerror = visionError;
 
 // // document.getElementById('vision').src = "http://10.50.24.2:1182/stream.mjpg";
 // // document.getElementById('vision').src = "http://10.50.24.2:1181/stream.mjpg";
