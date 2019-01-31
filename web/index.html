@@ -24,8 +24,8 @@
 			</a>
 			
 			<!--Programmable message to display to the drivers-->
-			<a class="navbar-item">
-				<h1 class="is-1" id="motd"></h1>
+			<a class="navbar-item" onclick="location.reload()">
+				<h1 class="is-1" >Refresh Feeds</h1>
 			</a>
 			
 		</div>
@@ -35,13 +35,13 @@
 		<div class="columns">
 			
 			<!--Camera 1-->
-			<div class="column" id="camera" >
-				<img id="vision" src="http://10.50.24.2:1182/stream.mjpg">
+			<div class="column" id="camera">
+				<img id="driver" src="http://10.50.24.2:1181/stream.mjpg" width="100%" onerror="this.onerror=null;this.src = this.src">
 			</div>
 			
 			<!--Camera 2-->
 			<div class="column" id="camera">
-				<img id="driver" width="100%" src="http://10.50.24.2:1181/stream.mjpg">
+				<img id="vision" src="http://10.50.24.2:1182/stream.mjpg" width="100%">
 			</div>
 			
 		</div>
@@ -49,8 +49,9 @@
 	
 	<!--JS file for time and MOTD-->
 	<script src="./time.js"></script>
-	<script src="./images.js"></script>
+	<!--<script src="./images.js"></script>-->
   <script>
-  	startTime()
+  	startTime();
+  	// window.setInterval(function(){updateImages()}, 5);
   </script>
 </body>
