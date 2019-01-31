@@ -11,3 +11,17 @@ dc{
 c{
 	color:green;
 }
+
+canvas{
+	border: 1px solid grey;
+	position: absolute;
+	top:0;
+	left:50%;
+}
+
+.overlay {
+	height:auto;
+	position: absolute;
+	top:0;
+	image-rendering: pixelated;
+}
